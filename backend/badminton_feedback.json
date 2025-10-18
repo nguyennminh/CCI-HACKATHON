@@ -1,0 +1,30 @@
+{
+  "overall_score": 40,
+  "injury_risk": "HIGH",
+  "injury_risk_explanation": "Excessive shoulder over-rotation and excessive elbow flexion create significant risk of shoulder impingement, rotator cuff strains, and elbow tendinitis. Inadequate contact height reduces control and increases joint stress.",
+  "critical_issues": [
+    {
+      "body_part": "Shoulder",
+      "problem": "Excessive over-rotation (81.3° vs reference 23.1°)",
+      "injury_risk": "Creates internal shoulder rotation, compressing the rotator cuff against the acromion, leading to impingement and potential rotator cuff tears.",
+      "correction": "Focus on maintaining external rotation at contact; imagine 'throwing a grenade' rather than 'throwing a punch'.",
+      "drill": "Wall Smash Drill: Practice smashes with racket hitting the wall while maintaining external shoulder rotation at contact point."
+    },
+    {
+      "body_part": "Elbow",
+      "problem": "Excessive flexion (159.1° vs reference 174.9°)",
+      "injury_risk": "Bent elbow at contact reduces racket head speed and places abnormal stress on elbow joint and tendons, increasing risk of lateral epicondylitis (tennis elbow).",
+      "correction": "Extend elbow fully at impact point; focus on brushing the shuttle downwards with straight arm.",
+      "drill": "Racket Extension Drill: Perform slow-motion smashes focusing on extending elbow fully while maintaining shoulder stability."
+    },
+    {
+      "body_part": "Contact Point",
+      "problem": "Inadequate height (-0.100 vs reference -0.149)",
+      "injury_risk": "Lower contact point reduces racket head speed and forces body to compensate with excessive shoulder/neck movement, increasing fatigue-related injury risk.",
+      "correction": "Full body extension to reach higher contact point; use lower body power to elevate racket.",
+      "drill": "High Contact Practice: Focus on extending fully through the shot, using leg drive to reach maximum height at contact."
+    }
+  ],
+  "positive_feedback": "Your form shows good fundamentals with clear follow-through. You demonstrate proper sequencing of movements and maintain good racket head speed overall. With targeted adjustments, you can achieve clean, powerful smashes while minimizing injury risk.",
+  "summary": "Your smash technique requires significant improvement in shoulder positioning and elbow extension to reduce injury risk and maximize power. Focus on maintaining external shoulder rotation and full elbow extension at contact point. With consistent practice of proper mechanics, you can develop a powerful and injury-resistant smash technique."
+}
