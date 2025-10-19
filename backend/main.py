@@ -7,6 +7,7 @@ import backend.extract_input_data as extract_input_data
 import backend.compute_similarity as compute_similarity
 import backend.kronos_ai as kronos_ai
 import backend.normalize_data as normalize_data
+import backend.generate_pro_gif as generate_pro_gif
 import backend.smash_classifier as smash_classifier
 import pandas as pd
 
@@ -61,4 +62,5 @@ def process_video(path):
     normalize_data.main()
     smash_classifier.main()
     compute_similarity.main()
+    generate_pro_gif.main()
     kronos_ai.main()
