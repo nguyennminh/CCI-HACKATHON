@@ -122,7 +122,7 @@ def process_datasets(train_path: str, test_path: str):
 
     print("Remapping keypoints to match testing data format...")
     df_train_final = remap_keypoints(df_train_normalized, keypoint_mapping)
-    df_train_final.to_csv('training_data_normalized.csv', index=False)
+    df_train_final.to_csv('backend/training_data_normalized.csv', index=False)
     print("✅ Saved normalized training data to 'training_data_normalized.csv'")
 
     print("Loading testing data...")
@@ -149,7 +149,7 @@ def process_datasets(train_path: str, test_path: str):
     df_test = df_test[common_cols]
 
     df_combined = pd.concat([df_train_final, df_test], ignore_index=True)
-    df_combined.to_csv('combined_normalized_data.csv', index=False)
+    df_combined.to_csv('backend/combined_normalized_data.csv', index=False)
 
     print("\n" + "="*50)
     print(f"✅ Combined dataset saved to 'combined_normalized_data.csv'")
@@ -162,8 +162,4 @@ if __name__ == "__main__":
     # Example file paths (edit as needed)
     TRAIN_PATH = "backend\clean_smash_dataset.csv"
     TEST_PATH = "backend\user_keypoints_selected.csv"
-    import os
-    print("Current working directory:", os.getcwd())
-    print("Expected file path:", os.path.abspath(TRAIN_PATH))
-    print("Files in current directory:", os.listdir())
     process_datasets(TRAIN_PATH, TEST_PATH)
