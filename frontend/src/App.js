@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload, Play, AlertCircle, CheckCircle, Loader } from 'lucide-react';
+import { Upload, Play, AlertCircle, CheckCircle, Loader, TrendingUp, Target, Award } from 'lucide-react';
 
 export default function SmashAnalyzer() {
   const [file, setFile] = useState(null);
@@ -69,7 +69,6 @@ export default function SmashAnalyzer() {
       setUploading(false);
       setProcessing(true);
 
-      // Poll for results
       await pollForResults();
     } catch (err) {
       setError(err.message || 'An error occurred during upload');
@@ -79,8 +78,7 @@ export default function SmashAnalyzer() {
   };
 
   const pollForResults = async () => {
-    // Poll every 2 seconds for results
-    const maxAttempts = 60; // 2 minutes max
+    const maxAttempts = 60;
     let attempts = 0;
 
     const poll = setInterval(async () => {
@@ -97,7 +95,6 @@ export default function SmashAnalyzer() {
             clearInterval(poll);
           }
         } else if (response.status === 202) {
-          // Still processing, continue polling
           console.log('Still processing...');
         } else if (attempts >= maxAttempts) {
           throw new Error('Processing timeout');
@@ -120,28 +117,301 @@ export default function SmashAnalyzer() {
     setProcessing(false);
   };
 
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)',
+      padding: '2rem',
+      position: 'relative',
+      overflow: 'hidden'
+    },
+    backgroundEffect: {
+      position: 'absolute',
+      inset: 0,
+      background: 'radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15), transparent 50%)',
+      pointerEvents: 'none'
+    },
+    contentWrapper: {
+      position: 'relative',
+      zIndex: 10,
+      maxWidth: '1280px',
+      margin: '0 auto'
+    },
+    header: {
+      textAlign: 'center',
+      marginBottom: '3rem'
+    },
+    headerIcon: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '1rem',
+      marginBottom: '1rem'
+    },
+    iconBox: {
+      height: '3rem',
+      width: '3rem',
+      borderRadius: '0.75rem',
+      background: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 10px 30px rgba(139, 92, 246, 0.4)'
+    },
+    title: {
+      fontSize: '3.5rem',
+      fontWeight: 'bold',
+      background: 'linear-gradient(to right, #ffffff, #a78bfa, #8b5cf6)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      margin: 0
+    },
+    subtitle: {
+      color: '#c4b5fd',
+      fontSize: '1.125rem',
+      maxWidth: '42rem',
+      margin: '0 auto'
+    },
+    card: {
+      background: 'rgba(255, 255, 255, 0.05)',
+      backdropFilter: 'blur(20px)',
+      borderRadius: '1.5rem',
+      padding: '2rem',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.3)',
+      marginBottom: '2rem'
+    },
+    dropzone: {
+      border: '3px dashed',
+      borderRadius: '1.5rem',
+      padding: '3rem',
+      textAlign: 'center',
+      transition: 'all 0.3s ease',
+      cursor: 'pointer'
+    },
+    dropzoneActive: {
+      borderColor: '#8b5cf6',
+      background: 'rgba(139, 92, 246, 0.1)',
+      transform: 'scale(1.02)'
+    },
+    dropzoneInactive: {
+      borderColor: 'rgba(167, 139, 250, 0.3)',
+      background: 'transparent'
+    },
+    uploadIcon: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '1rem'
+    },
+    iconCircle: {
+      height: '5rem',
+      width: '5rem',
+      borderRadius: '50%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center'
+    },
+    fileName: {
+      color: '#ffffff',
+      fontWeight: '600',
+      fontSize: '1.125rem',
+      marginBottom: '0.5rem'
+    },
+    fileSize: {
+      color: '#c4b5fd',
+      fontSize: '0.875rem'
+    },
+    errorBox: {
+      marginTop: '1rem',
+      padding: '1rem',
+      background: 'rgba(239, 68, 68, 0.1)',
+      border: '1px solid rgba(239, 68, 68, 0.3)',
+      borderRadius: '0.75rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.75rem'
+    },
+    buttonContainer: {
+      marginTop: '1.5rem',
+      display: 'flex',
+      gap: '1rem',
+      justifyContent: 'center',
+      flexWrap: 'wrap'
+    },
+    button: {
+      padding: '0.875rem 2rem',
+      fontSize: '1rem',
+      fontWeight: '600',
+      borderRadius: '0.75rem',
+      border: 'none',
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.5rem',
+      transition: 'all 0.3s ease',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)'
+    },
+    primaryButton: {
+      background: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)',
+      color: '#ffffff'
+    },
+    secondaryButton: {
+      background: 'rgba(71, 85, 105, 0.8)',
+      color: '#ffffff'
+    },
+    disabledButton: {
+      background: 'rgba(75, 85, 99, 0.5)',
+      cursor: 'not-allowed',
+      opacity: 0.6
+    },
+    processingText: {
+      marginTop: '1.5rem',
+      textAlign: 'center',
+      color: '#c4b5fd',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '0.75rem',
+      padding: '1rem',
+      background: 'rgba(139, 92, 246, 0.1)',
+      borderRadius: '9999px'
+    },
+    pulsingDot: {
+      height: '0.5rem',
+      width: '0.5rem',
+      borderRadius: '50%',
+      background: '#8b5cf6',
+      animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+    },
+    resultsContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '2rem'
+    },
+    sectionHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '0.75rem',
+      marginBottom: '1.5rem'
+    },
+    sectionTitle: {
+      fontSize: '2rem',
+      fontWeight: 'bold',
+      color: '#ffffff',
+      margin: 0
+    },
+    sectionSubtitle: {
+      color: '#c4b5fd',
+      fontSize: '0.875rem'
+    },
+    gridContainer: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+      gap: '1.5rem'
+    },
+    gifCard: {
+      position: 'relative',
+      background: 'rgba(0, 0, 0, 0.3)',
+      borderRadius: '1.25rem',
+      padding: '1rem',
+      border: '1px solid rgba(167, 139, 250, 0.2)',
+      transition: 'all 0.3s ease'
+    },
+    gifCardHover: {
+      transform: 'translateY(-4px)',
+      boxShadow: '0 20px 40px rgba(139, 92, 246, 0.3)'
+    },
+    gifHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: '0.75rem'
+    },
+    gifTitle: {
+      fontSize: '1.125rem',
+      fontWeight: '600',
+      color: '#ffffff'
+    },
+    gifImage: {
+      width: '100%',
+      borderRadius: '0.75rem',
+      aspectRatio: '16/9',
+      objectFit: 'contain',
+      background: 'rgba(0, 0, 0, 0.5)'
+    },
+    tipsBox: {
+      color: '#e9d5ff',
+      whiteSpace: 'pre-wrap',
+      lineHeight: '1.75',
+      background: 'rgba(0, 0, 0, 0.2)',
+      borderRadius: '1rem',
+      padding: '1.5rem',
+      border: '1px solid rgba(167, 139, 250, 0.1)'
+    },
+    scoreContainer: {
+      marginBottom: '1.5rem'
+    },
+    scoreHeader: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'baseline',
+      marginBottom: '0.75rem'
+    },
+    scoreValue: {
+      fontSize: '3.5rem',
+      fontWeight: 'bold',
+      background: 'linear-gradient(to right, #a78bfa, #8b5cf6)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent'
+    },
+    scoreLabel: {
+      color: '#c4b5fd',
+      fontSize: '0.875rem'
+    },
+    progressBar: {
+      position: 'relative',
+      height: '1.5rem',
+      background: 'rgba(0, 0, 0, 0.3)',
+      borderRadius: '9999px',
+      overflow: 'hidden'
+    },
+    progressFill: {
+      height: '100%',
+      background: 'linear-gradient(to right, #a78bfa, #8b5cf6, #7c3aed)',
+      borderRadius: '9999px',
+      transition: 'width 1s ease-out',
+      boxShadow: '0 0 20px rgba(139, 92, 246, 0.6)'
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 p-8">
-      <div className="max-w-6xl mx-auto">
+    <div style={styles.container}>
+      <div style={styles.backgroundEffect} />
+      
+      <div style={styles.contentWrapper}>
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-white mb-4">
-            Smash Technique Analyzer
-          </h1>
-          <p className="text-purple-200 text-lg">
-            Upload your smash video and get AI-powered insights to improve your technique
+        <header style={styles.header}>
+          <div style={styles.headerIcon}>
+            <div style={styles.iconBox}>
+              <Target size={32} color="#ffffff" />
+            </div>
+            <h1 style={styles.title}>Motion Mentor</h1>
+          </div>
+          <p style={styles.subtitle}>
+            Upload your badminton smash video and receive AI-powered insights to elevate your technique
           </p>
-        </div>
+        </header>
 
         {/* Upload Section */}
         {!results && (
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 mb-8 border border-white/20">
+          <div style={styles.card}>
             <div
-              className={`border-4 border-dashed rounded-xl p-12 text-center transition-all ${
-                dragActive
-                  ? 'border-purple-400 bg-purple-500/20'
-                  : 'border-purple-300/50 hover:border-purple-400'
-              }`}
+              style={{
+                ...styles.dropzone,
+                ...(dragActive ? styles.dropzoneActive : styles.dropzoneInactive)
+              }}
               onDragEnter={handleDrag}
               onDragLeave={handleDrag}
               onDragOver={handleDrag}
@@ -152,30 +422,34 @@ export default function SmashAnalyzer() {
                 id="video-upload"
                 accept="video/*"
                 onChange={handleFileChange}
-                className="hidden"
+                style={{ display: 'none' }}
                 disabled={uploading || processing}
               />
               
-              <label htmlFor="video-upload" className="cursor-pointer">
-                <div className="flex flex-col items-center gap-4">
+              <label htmlFor="video-upload" style={{ cursor: 'pointer', display: 'block' }}>
+                <div style={styles.uploadIcon}>
                   {file ? (
                     <>
-                      <CheckCircle className="w-16 h-16 text-green-400" />
-                      <div className="text-white">
-                        <p className="font-semibold text-lg">{file.name}</p>
-                        <p className="text-sm text-purple-200">
+                      <div style={{ ...styles.iconCircle, background: 'rgba(34, 197, 94, 0.2)' }}>
+                        <CheckCircle size={48} color="#22c55e" />
+                      </div>
+                      <div>
+                        <p style={styles.fileName}>{file.name}</p>
+                        <p style={styles.fileSize}>
                           {(file.size / (1024 * 1024)).toFixed(2)} MB
                         </p>
                       </div>
                     </>
                   ) : (
                     <>
-                      <Upload className="w-16 h-16 text-purple-300" />
-                      <div className="text-white">
-                        <p className="font-semibold text-lg">
+                      <div style={{ ...styles.iconCircle, background: 'rgba(139, 92, 246, 0.2)' }}>
+                        <Upload size={48} color="#8b5cf6" />
+                      </div>
+                      <div>
+                        <p style={styles.fileName}>
                           Drop your video here or click to browse
                         </p>
-                        <p className="text-sm text-purple-200 mt-2">
+                        <p style={styles.fileSize}>
                           Supports MP4, MOV, AVI and more
                         </p>
                       </div>
@@ -186,26 +460,40 @@ export default function SmashAnalyzer() {
             </div>
 
             {error && (
-              <div className="mt-4 p-4 bg-red-500/20 border border-red-500/50 rounded-lg flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 text-red-400" />
-                <p className="text-red-200">{error}</p>
+              <div style={styles.errorBox}>
+                <AlertCircle size={20} color="#ef4444" />
+                <p style={{ color: '#fca5a5', margin: 0 }}>{error}</p>
               </div>
             )}
 
-            <div className="mt-6 flex gap-4 justify-center">
+            <div style={styles.buttonContainer}>
               <button
                 onClick={handleUpload}
                 disabled={!file || uploading || processing}
-                className="px-8 py-3 bg-purple-600 hover:bg-purple-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors flex items-center gap-2"
+                style={{
+                  ...styles.button,
+                  ...styles.primaryButton,
+                  ...(!file || uploading || processing ? styles.disabledButton : {})
+                }}
+                onMouseEnter={(e) => {
+                  if (file && !uploading && !processing) {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.4)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+                }}
               >
                 {uploading || processing ? (
                   <>
-                    <Loader className="w-5 h-5 animate-spin" />
+                    <Loader size={20} style={{ animation: 'spin 1s linear infinite' }} />
                     {uploading ? 'Uploading...' : 'Processing...'}
                   </>
                 ) : (
                   <>
-                    <Play className="w-5 h-5" />
+                    <Play size={20} />
                     Analyze Video
                   </>
                 )}
@@ -214,7 +502,18 @@ export default function SmashAnalyzer() {
               {file && !uploading && !processing && (
                 <button
                   onClick={resetUpload}
-                  className="px-8 py-3 bg-slate-600 hover:bg-slate-700 text-white font-semibold rounded-lg transition-colors"
+                  style={{
+                    ...styles.button,
+                    ...styles.secondaryButton
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.background = 'rgba(71, 85, 105, 1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.background = 'rgba(71, 85, 105, 0.8)';
+                  }}
                 >
                   Clear
                 </button>
@@ -222,8 +521,9 @@ export default function SmashAnalyzer() {
             </div>
 
             {processing && (
-              <div className="mt-6 text-center">
-                <p className="text-purple-200 animate-pulse">
+              <div style={styles.processingText}>
+                <div style={styles.pulsingDot} />
+                <p style={{ margin: 0, fontWeight: '500' }}>
                   Analyzing your technique with AI... This may take a minute.
                 </p>
               </div>
@@ -233,78 +533,138 @@ export default function SmashAnalyzer() {
 
         {/* Results Section */}
         {results && (
-          <div className="space-y-8">
-            <button
-              onClick={resetUpload}
-              className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
-            >
-              Analyze Another Video
-            </button>
+          <div style={styles.resultsContainer}>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <button
+                onClick={resetUpload}
+                style={{
+                  ...styles.button,
+                  ...styles.primaryButton
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 25px rgba(139, 92, 246, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.2)';
+                }}
+              >
+                <Upload size={20} />
+                Analyze Another Video
+              </button>
+            </div>
+
+            {/* Similarity Score */}
+            {results.similarity && (
+              <div style={styles.card}>
+                <div style={styles.sectionHeader}>
+                  <div style={{ ...styles.iconBox, height: '3rem', width: '3rem' }}>
+                    <Award size={28} color="#ffffff" />
+                  </div>
+                  <div>
+                    <h2 style={styles.sectionTitle}>Similarity Score</h2>
+                    <p style={styles.sectionSubtitle}>Match with professional technique</p>
+                  </div>
+                </div>
+                <div style={styles.scoreContainer}>
+                  <div style={styles.scoreHeader}>
+                    <span style={styles.scoreValue}>{results.similarity}%</span>
+                    <span style={styles.scoreLabel}>similarity</span>
+                  </div>
+                  <div style={styles.progressBar}>
+                    <div
+                      style={{
+                        ...styles.progressFill,
+                        width: `${results.similarity}%`
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* GIF Comparison */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                Technique Comparison
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-black/30 rounded-xl p-4">
-                  <h3 className="text-xl font-semibold text-purple-300 mb-4">
-                    Professional Form
-                  </h3>
+            <div style={styles.card}>
+              <div style={styles.sectionHeader}>
+                <TrendingUp size={24} color="#8b5cf6" />
+                <h2 style={styles.sectionTitle}>Technique Comparison</h2>
+              </div>
+              <div style={styles.gridContainer}>
+                <div
+                  style={styles.gifCard}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div style={styles.gifHeader}>
+                    <h3 style={styles.gifTitle}>Professional Form</h3>
+                    <Award size={20} color="#a78bfa" />
+                  </div>
                   <img
-                    src={"http://localhost:8000/gifs/proshot.gif"}
+                    src="http://localhost:8000/gifs/proshot.gif"
                     alt="Professional technique"
-                    className="w-full rounded-lg"
+                    style={styles.gifImage}
                   />
                 </div>
-                <div className="bg-black/30 rounded-xl p-4">
-                  <h3 className="text-xl font-semibold text-purple-300 mb-4">
-                    Your Form
-                  </h3>
+                <div
+                  style={styles.gifCard}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(139, 92, 246, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <div style={styles.gifHeader}>
+                    <h3 style={styles.gifTitle}>Your Form</h3>
+                    <Target size={20} color="#8b5cf6" />
+                  </div>
                   <img
-                    src={"http://localhost:8000/gifs/badminton_shot_user_video.gif"}
+                    src="http://localhost:8000/gifs/badminton_shot_user_video.gif"
                     alt="Your technique"
-                    className="w-full rounded-lg"
+                    style={styles.gifImage}
                   />
                 </div>
               </div>
             </div>
 
             {/* AI Tips */}
-            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-              <h2 className="text-3xl font-bold text-white mb-6">
-                AI-Powered Insights
-              </h2>
-              <div className="prose prose-invert max-w-none">
-                <div className="text-purple-100 whitespace-pre-wrap leading-relaxed">
-                  {results.tips || 'No tips available'}
+            <div style={styles.card}>
+              <div style={styles.sectionHeader}>
+                <div style={{ ...styles.iconBox, height: '2.5rem', width: '2.5rem' }}>
+                  <TrendingUp size={20} color="#ffffff" />
                 </div>
+                <div>
+                  <h2 style={styles.sectionTitle}>AI-Powered Insights</h2>
+                  <p style={styles.sectionSubtitle}>Personalized recommendations</p>
+                </div>
+              </div>
+              <div style={styles.tipsBox}>
+                {results.tips || 'No tips available'}
               </div>
             </div>
-
-            {/* Similarity Score */}
-            {results.similarity && (
-              <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Similarity Score
-                </h2>
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 bg-black/30 rounded-full h-8 overflow-hidden">
-                    <div
-                      className="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-1000 flex items-center justify-end pr-4"
-                      style={{ width: `${results.similarity}%` }}
-                    >
-                      <span className="text-white font-bold text-sm">
-                        {results.similarity}%
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
         )}
       </div>
+
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.5; }
+        }
+      `}</style>
     </div>
   );
 }
