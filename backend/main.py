@@ -3,11 +3,11 @@ from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 import os
 import shutil
-import compute_similarity
-import extract_input_data
-import kronos_ai
-import normalize_data
-import smash_classifier
+import backend.extract_input_data as extract_input_data
+import backend.compute_similarity as compute_similarity
+import backend.kronos_ai as kronos_ai
+import backend.normalize_data as normalize_data
+import backend.smash_classifier as smash_classifier
 import pandas as pd
 
 app = FastAPI()
@@ -62,31 +62,3 @@ def process_video(path):
     smash_classifier.main()
     compute_similarity.main()
     kronos_ai.main()
-    
-    '''
-    
-
-    #Extract keypoints and create CSV and gif
-    extract_input_data.create_gif(extract_input_data.extract_keypoints(path))
-
-    # Normalize data
-    
-    TEST_PATH = "backend\user_keypoints_selected.csv"
-    TRAIN_PATH = "backend\clean_smash_dataset.csv"
-
-    normalize_data.process_datasets(TRAIN_PATH, TEST_PATH)
-
-    # Compute similarity scores
-
-    compute_similarity.get_sequence('backend/combined_normalized_data.csv', 'user_video')
-
-    values = 'backend/combined_normalized_data.csv'.loc[2:4, 'backend/combined_normalized_data.csv'.columns[0]].values
-
-    ref_114_seq = compute_similarity.get_sequence('backend/combined_normalized_data.csv', values[0])
-    ref_135_seq = compute_similarity.get_sequence('backend/combined_normalized_data.csv', values[1])
-    ref_148_seq = compute_similarity.get_sequence('backend/combined_normalized_data.csv', values[2])
-
-    dist_114, path_114 = compare_motion_sequences(user_seq, ref_114_seq)
-    dist_135, path_135 = compare_motion_sequences(user_seq, ref_135_seq)
-    dist_148, path_148 = compare_motion_sequences(user_seq, ref_148_seq)
-    '''

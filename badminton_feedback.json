@@ -1,0 +1,37 @@
+{
+  "overall_score": 25,
+  "injury_risk": "MODERATE",
+  "injury_risk_explanation": "Moderate injury risk primarily from excessive shoulder internal rotation and poor arm extension mechanics, which can lead to rotator cuff strain and shoulder impingement. Elbow hyperextension risk is also present due to the bent elbow at impact.",
+  "critical_issues": [
+    {
+      "body_part": "shoulder",
+      "problem": "Significant over-rotation at impact (88.1° vs reference 28.3°)",
+      "injury_risk": "Excessive internal rotation strains the rotator cuff muscles, particularly the supraspinatus, and increases risk of shoulder impingement due to altered scapulohumeral rhythm.",
+      "correction": "Focus on maintaining 90-100° external rotation at contact point. Strengthen scapular stabilizers and improve shoulder blade control.",
+      "drill": "Wall push-up drills with emphasis on shoulder blade positioning, external rotation with resistance bands, and shadow smash practice focusing on arm control."
+    },
+    {
+      "body_part": "elbow",
+      "problem": "Elbow too bent at impact (15.9° vs reference 165.8°)",
+      "injury_risk": "Hyperextension forces excessive stress on the elbow joint and surrounding tendons, increasing risk of lateral epicondylitis (tennis elbow).",
+      "correction": "Maintain near-full extension at contact point. Practice extending arm fully while keeping wrist stable.",
+      "drill": "Target practice with focus on arm extension, wrist stabilization drills, and using a mirror to monitor elbow position."
+    },
+    {
+      "body_part": "arm",
+      "problem": "Inadequate arm extension at impact (0.017 vs reference 0.160)",
+      "injury_risk": "Short arm extension reduces smash power and increases stress on the shoulder joint through compensatory movements.",
+      "correction": "Reach further forward at contact point. Focus on full body rotation and arm extension during smash execution.",
+      "drill": "Shadow smash drills emphasizing full extension, use of a longer racquet to encourage reach, and body rotation exercises."
+    },
+    {
+      "body_part": "body",
+      "problem": "Contact point too low (-0.011 vs reference -0.153)",
+      "injury_risk": "Low contact point reduces smash power and may force awkward body positioning, increasing risk of lower back strain.",
+      "correction": "Jump higher or time shot better to make contact at optimal height. Focus on proper jumping technique and timing.",
+      "drill": "High jump drills, practice jumps focusing on height, and timing exercises with partner feeding."
+    }
+  ],
+  "positive_feedback": "Good base technique foundation with effective body rotation and racquet head speed. Demonstrates potential for powerful smashes with refinement of these key elements.",
+  "summary": "Your smash technique shows promise with solid body rotation, but requires significant refinement in shoulder control, arm extension, elbow positioning, and contact point timing to maximize power while reducing injury risk, particularly to the shoulders and elbows."
+}

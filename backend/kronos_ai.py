@@ -178,7 +178,7 @@ def save_feedback_to_file(feedback: Dict[str, Any], filename: str = "feedback_re
 # Example usage and testing (main function)
 def main():
     # Example analysis output (you would get this from your form analysis)
-    with open('output.txt', 'r', encoding='utf-8') as f:
+    with open('backend/output.txt', 'r', encoding='utf-8') as f:
         content = f.read()
 
     analysis_text = content
@@ -186,10 +186,10 @@ def main():
     import os
 
     # Load environment variables from .env file
-    load_dotenv()
+    load_dotenv(dotenv_path="backend/.env")
 
     # Get the API_KEY
-    api_key = os.getenv("API_KEY")
+    api_key = os.getenv("KRONOS_API_KEY")
     
     # Or use environment variable:
     # os.environ['KRONOS_API_KEY'] = "your_api_key"
@@ -209,7 +209,7 @@ def main():
     save_feedback_to_file(feedback, "badminton_feedback.json")
     
     # Also save formatted text version
-    with open("badminton_feedback.txt", "w", encoding="utf-8") as f:
+    with open("backend/badminton_feedback.txt", "w", encoding="utf-8") as f:
         f.write(formatted_output)
     print("\nFormatted feedback saved to badminton_feedback.txt")
 

@@ -122,6 +122,8 @@ def compare_motion_sequences(user_seq, reference_seq):
 
 def main():
     # Extract sequences
+    df = pd.read_csv('backend/combined_normalized_data.csv')
+
     user_seq = get_sequence(df, 'user_video')
 
     # Read the CSV

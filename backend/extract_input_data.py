@@ -4,6 +4,7 @@ import mediapipe as mp
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 from matplotlib.animation import FuncAnimation
 
 # Indices for right shoulder, left shoulder, etc.
@@ -48,6 +49,7 @@ def extract_keypoints(video_path='uploads/smash_video_example.mp4', output_csv='
     print(f"  Resolution: {width}x{height}")
     
     keypoints_data = []
+    gif_data = []
     frame_count = 0
     frames_processed = 0
     frames_with_pose = 0
@@ -85,6 +87,8 @@ def extract_keypoints(video_path='uploads/smash_video_example.mp4', output_csv='
             # Only add if all keypoints are reasonably visible
             if all_visible:
                 keypoints_data.append([frame_count] + keypoints)
+            
+            gif_data.append(keypoints)
             
             # Draw landmarks on frame
             image_bgr = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
@@ -138,17 +142,21 @@ def extract_keypoints(video_path='uploads/smash_video_example.mp4', output_csv='
     # Build DataFrame and save CSV
     columns = ['frame_count'] + [f'kpt_{i}_{axis}' for i in KEYPOINT_INDICES for axis in ['x', 'y']]
     df_user = pd.DataFrame(keypoints_data, columns=columns)
+    df_gif = pd.DataFrame(gif_data, columns=[f'kpt_{i}_{axis}' for i in KEYPOINT_INDICES for axis in ['x', 'y']])
     df_user.insert(0, 'id', 'user_video')
     df_user.insert(1, 'type_of_shot', 'smash')
+    df_gif.insert(0, 'id', 'user_video')
+    df_gif.insert(1, 'type_of_shot', 'smash')
     
     df_user.to_csv("backend/user_keypoints_selected.csv", index=False)
+    df_gif.to_csv("backend/user_keypoints_for_gif.csv", index=False)
     print(f"\n✅ Saved keypoints to {output_csv} with {len(df_user)} frames")
     print(f"First few rows:")
     print(df_user.head())
     return output_csv
 
 
-def create_gif(csv_path='backend/user_keypoints_selected.csv'):
+def create_gif(csv_path='backend/user_keypoints_for_gif.csv'):
     df = pd.read_csv(csv_path)
     
     print(f"\nLoaded CSV with {len(df)} rows")
@@ -207,13 +215,15 @@ def create_gif(csv_path='backend/user_keypoints_selected.csv'):
                 lines[idx].set_data([], [])
         return lines
     
+
+    print(len(shot_df))
     anim = FuncAnimation(fig, update, frames=len(shot_df), interval=100, blit=False)
     os.makedirs('static', exist_ok=True)
     gif_filename = f'static/badminton_shot_{shot_id}.gif'
     
     try:
         print("Saving animation...")
-        anim.save(gif_filename, writer='pillow', fps=15)
+        anim.save(gif_filename, writer='pillow', fps=10)
         print(f"✅ Saved animation to {gif_filename}")
         plt.close()
         return gif_filename
@@ -225,16 +235,16 @@ def create_gif(csv_path='backend/user_keypoints_selected.csv'):
         return None
 
 
-if __name__ == "__main__":
+def main():
     # OPTION 1: Use absolute path
-    video_path = r'C:\Users\kotha\Downloads\CCI-HACKATHON\backend\uploads\smash_video_example.mp4'
+    video_path = "backend/uploads/smash_video_example.mov"
     
     # OPTION 2: Or use relative path from where you're running the script
     # video_path = '../smash_video_example.mp4'  # if video is one folder up
     # video_path = './videos/smash_video_example.mp4'  # if video is in a 'videos' subfolder
     
     # Check if file exists before processing
-    import os
+    
     if not os.path.exists(video_path):
         print(f"ERROR: Cannot find video at: {video_path}")
         print(f"Current working directory: {os.getcwd()}")
@@ -251,10 +261,13 @@ if __name__ == "__main__":
         
         if csv_file:
             print(f"\n✅ CSV file created: {csv_file}")
-            gif_file = create_gif(csv_file)
+            gif_file = create_gif()
             if gif_file:
                 print(f"\n✅ GIF created successfully: {gif_file}")
             else:
                 print("\n❌ Failed to create GIF")
         else:
             print("\n❌ Failed to extract keypoints")
+
+if __name__ == "__main__":
+    main()
