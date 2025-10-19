@@ -1,37 +1,30 @@
 {
-  "overall_score": 25,
-  "injury_risk": "MODERATE",
-  "injury_risk_explanation": "Moderate injury risk primarily from excessive shoulder internal rotation and poor arm extension mechanics, which can lead to rotator cuff strain and shoulder impingement. Elbow hyperextension risk is also present due to the bent elbow at impact.",
+  "overall_score": 30,
+  "injury_risk": "HIGH",
+  "injury_risk_explanation": "The significantly bent elbow angle (15.9° vs. reference 165.8°) and over-rotated shoulder (88.1° vs. reference 28.3°) create substantial stress on the shoulder and elbow joints, particularly the rotator cuff and UCL. This form is highly inefficient for power generation and increases the risk of acute injuries (like tears) and chronic overuse conditions.",
   "critical_issues": [
     {
       "body_part": "shoulder",
-      "problem": "Significant over-rotation at impact (88.1° vs reference 28.3°)",
-      "injury_risk": "Excessive internal rotation strains the rotator cuff muscles, particularly the supraspinatus, and increases risk of shoulder impingement due to altered scapulohumeral rhythm.",
-      "correction": "Focus on maintaining 90-100° external rotation at contact point. Strengthen scapular stabilizers and improve shoulder blade control.",
-      "drill": "Wall push-up drills with emphasis on shoulder blade positioning, external rotation with resistance bands, and shadow smash practice focusing on arm control."
+      "problem": "Over-rotation detected (88.1° vs. reference 28.3°)",
+      "injury_risk": "This excessive rotation places extreme torque on the shoulder joint, particularly the rotator cuff muscles and labrum, leading to a high risk of strains, tears, and chronic impingement. It also compromises control and follow-through.",
+      "correction": "Minimize shoulder rotation; focus on generating power primarily from the torso (trunk rotation) rather than the shoulder joint itself. The back of the hitting shoulder should ideally be squared to the net or only slightly rotated.",
+      "drill": "Shadow smash drills with a focus on trunk rotation: Start in a ready position, rotate from the hips and core, and extend the arm as if hitting. Use a mirror or video to monitor shoulder alignment. Practice the 'Chinese Wall' drill against a wall, emphasizing trunk drive."
     },
     {
       "body_part": "elbow",
-      "problem": "Elbow too bent at impact (15.9° vs reference 165.8°)",
-      "injury_risk": "Hyperextension forces excessive stress on the elbow joint and surrounding tendons, increasing risk of lateral epicondylitis (tennis elbow).",
-      "correction": "Maintain near-full extension at contact point. Practice extending arm fully while keeping wrist stable.",
-      "drill": "Target practice with focus on arm extension, wrist stabilization drills, and using a mirror to monitor elbow position."
+      "problem": "Elbow too bent at impact (15.9° vs. reference 165.8°)",
+      "injury_risk": "A bent elbow significantly increases stress on the elbow joint, particularly the Ulnar Collateral Ligament (UCL) and tendons. This is a major contributor to 'tennis elbow' (lateral epicondylitis) and 'golfer's elbow' (medial epicondylitis), common in racquet sports.",
+      "correction": "Extend the elbow fully at contact. Imagine reaching your racket as far back as possible before the smash, then extending powerfully through the ball of the shuttle. The elbow should be straight or nearly straight at impact.",
+      "drill": "High elbow smash drills: Practice smashing with a focus on keeping the elbow extended. You can use a wall for feedback or have a coach observe. Perform slow-motion smashes, exaggerating the elbow extension through the point of contact. Resistance band exercises for the triceps can also help strengthen the extensor mechanism."
     },
     {
-      "body_part": "arm",
-      "problem": "Inadequate arm extension at impact (0.017 vs reference 0.160)",
-      "injury_risk": "Short arm extension reduces smash power and increases stress on the shoulder joint through compensatory movements.",
-      "correction": "Reach further forward at contact point. Focus on full body rotation and arm extension during smash execution.",
-      "drill": "Shadow smash drills emphasizing full extension, use of a longer racquet to encourage reach, and body rotation exercises."
-    },
-    {
-      "body_part": "body",
-      "problem": "Contact point too low (-0.011 vs reference -0.153)",
-      "injury_risk": "Low contact point reduces smash power and may force awkward body positioning, increasing risk of lower back strain.",
-      "correction": "Jump higher or time shot better to make contact at optimal height. Focus on proper jumping technique and timing.",
-      "drill": "High jump drills, practice jumps focusing on height, and timing exercises with partner feeding."
+      "body_part": "arm/wrist",
+      "problem": "Insufficient arm extension and low contact point (Arm extension: 0.017 vs. 0.160; Contact point too low)",
+      "injury_risk": "Low contact point and insufficient arm extension force the wrist into an awkward, extended, and possibly hyperextended position upon impact, increasing the risk of wrist sprains and strains. It also reduces the power and effectiveness of the smash, leading to compensatory movements that can strain other joints.",
+      "correction": "Jump higher to reach the optimal contact point (higher than the shuttle's apex) and ensure full arm extension through the point of contact. The arm should be fully extended and powerfully driven through the shuttle.",
+      "drill": "Jumping smash drills: Focus on timing your jump to meet the shuttle at its highest point or slightly before. Practice full arm extension through the ball of the shuttle. Use a lower shuttlecock initially to practice the technique before incorporating speed. Plyometric exercises like box jumps can improve jumping ability."
     }
   ],
-  "positive_feedback": "Good base technique foundation with effective body rotation and racquet head speed. Demonstrates potential for powerful smashes with refinement of these key elements.",
-  "summary": "Your smash technique shows promise with solid body rotation, but requires significant refinement in shoulder control, arm extension, elbow positioning, and contact point timing to maximize power while reducing injury risk, particularly to the shoulders and elbows."
+  "positive_feedback": "Your commitment to technique improvement is evident. You possess good foundational badminton skills and agility, which are excellent starting points. The power generation mechanics are generally on track, indicating a strong potential for improvement with focused form correction.",
+  "summary": "Your badminton smash technique requires significant improvement in joint angles and timing to enhance power, control, and crucially, to prevent injury. The current form, particularly the bent elbow and over-rotated shoulder, presents a high risk of common badminton injuries. Prioritizing drills that correct these issues will lead to a more powerful, efficient, and safer smash. Continued practice with these corrections will yield substantial benefits."
 }
