@@ -175,8 +175,8 @@ def save_feedback_to_file(feedback: Dict[str, Any], filename: str = "feedback_re
     print(f"Feedback saved to {filename}")
 
 
-# Example usage and testing
-if __name__ == "__main__":
+# Example usage and testing (main function)
+def main():
     # Example analysis output (you would get this from your form analysis)
     with open('output.txt', 'r', encoding='utf-8') as f:
         content = f.read()
@@ -212,3 +212,6 @@ if __name__ == "__main__":
     with open("badminton_feedback.txt", "w", encoding="utf-8") as f:
         f.write(formatted_output)
     print("\nFormatted feedback saved to badminton_feedback.txt")
+
+if __name__ == "__main__":
+    main()

@@ -120,7 +120,7 @@ def compare_motion_sequences(user_seq, reference_seq):
 # MAIN EXECUTION
 # ============================================================
 
-if __name__ == "__main__":
+def main():
     # Extract sequences
     user_seq = get_sequence(df, 'user_video')
 
@@ -264,3 +264,5 @@ if __name__ == "__main__":
     feedback = generate_detailed_feedback(user_analysis, best_ref_analysis, user_impact, ref_impact)
     print(feedback)
 
+if __name__ == "__main__":
+    main()

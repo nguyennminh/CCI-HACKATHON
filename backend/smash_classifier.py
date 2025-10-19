@@ -151,7 +151,7 @@ def classify_smash(csv_path: str, ideal_id: str = "user_video") -> pd.DataFrame:
 
 
 # Run module directly for testing or pipeline execution
-if __name__ == "__main__":
+def main():
     DATA_PATH = "backend\combined_normalized_data.csv"
     IDEAL_ID = "user_video"  # Replace with your ideal reference ID
 
@@ -160,3 +160,6 @@ if __name__ == "__main__":
 
     print("\n=== TOP MATCHES ===")
     print(score_df.head())
+
+if __name__ == "__main__":
+    main()

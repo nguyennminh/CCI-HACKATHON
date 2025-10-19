@@ -157,9 +157,11 @@ def process_datasets(train_path: str, test_path: str):
     print(f"Testing frames: {len(df_test)}")
     print(f"Total frames: {len(df_combined)}")
 
-
-if __name__ == "__main__":
+def main():
     # Example file paths (edit as needed)
     TRAIN_PATH = "backend\clean_smash_dataset.csv"
     TEST_PATH = "backend\user_keypoints_selected.csv"
     process_datasets(TRAIN_PATH, TEST_PATH)
+
+if __name__ == "__main__":
+    main()

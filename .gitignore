@@ -1,0 +1,27 @@
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Uplaods and videos
+uploads/
+*.mp4
+*.mov
+*.h5
+*.ckpt
+*.so
+*.dylib
+
+# IDEs
+.vscode/
+.idea/
