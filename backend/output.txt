@@ -4,27 +4,27 @@ BADMINTON SMASH FORM ANALYSIS
 ============================================================
 
 📐 ELBOW ANGLE AT IMPACT:
-   Your angle: 147.7°
+   Your angle: 15.9°
    Reference: 165.8°
-   Difference: -18.0°
+   Difference: -149.9°
    ⚠️  Your elbow is too bent. Extend more at contact for reach.
 
 💪 SHOULDER ANGLE AT IMPACT:
-   Your angle: 80.4°
+   Your angle: 88.1°
    Reference: 28.3°
-   Difference: +52.1°
+   Difference: +59.8°
    ⚠️  Over-rotation detected.
 
 🎯 CONTACT POINT HEIGHT:
-   Your height: -0.082
+   Your height: -0.011
    Reference: -0.153
-   Difference: +0.071
+   Difference: +0.142
    ⚠️  Contact too low — jump higher or time earlier.
 
 🏹 ARM EXTENSION AT IMPACT:
-   Your extension: 0.105
+   Your extension: 0.017
    Reference: 0.160
-   Difference: -0.055
+   Difference: -0.144
    ⚠️  Reach higher for full extension.
 
 ⭐ OVERALL FORM SCORE: 25/100

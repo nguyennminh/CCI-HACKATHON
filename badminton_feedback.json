@@ -1,30 +1,30 @@
 {
   "overall_score": 25,
   "injury_risk": "HIGH",
-  "injury_risk_explanation": "Excessive shoulder rotation and bent elbow at impact create significant internal shoulder stress and increase risk of rotator cuff injuries and elbow strain.",
+  "injury_risk_explanation": "The current smash form presents a significant risk of shoulder injuries, primarily due to excessive shoulder over-rotation and insufficient elbow extension, which can strain the rotator cuff. Additionally, the low contact point and poor arm extension increase stress on the elbow and shoulder during impact.",
   "critical_issues": [
     {
       "body_part": "shoulder",
-      "problem": "Over-rotation detected (80.4° vs reference 28.3°)",
-      "injury_risk": "Excessive internal rotation causes abnormal stress on rotator cuff muscles and labrum, increasing risk of shoulder impingement, strains, or tears.",
-      "correction": "Maintain a more neutral shoulder position at contact, limit rotation to 30-40° internally from neutral",
-      "drill": "Shoulder rotation drill against wall: Stand facing wall, throw forehand smash with controlled 45° shoulder rotation without full body twist"
+      "problem": "Excessive shoulder over-rotation at impact (88.1° vs. reference 28.3°)",
+      "injury_risk": "This over-rotation places excessive torque on the shoulder joint and rotator cuff muscles, significantly increasing the risk of strains, tendinitis, or labral tears – common injuries in badminton.",
+      "correction": "Focus on a more compact, controlled shoulder rotation. The primary power should come from the legs and torso, with the shoulder blade (scapula) retracting and rotating efficiently rather than the shoulder joint itself rotating excessively.",
+      "drill": "1. Wall Push-ups: Practice against a wall, focusing on scapular retraction and controlled shoulder movement. 2. Medicine Ball Rotational Throws (low intensity): Use a light medicine ball to emphasize torso rotation and proper sequencing of the smash."
     },
     {
       "body_part": "elbow",
-      "problem": "Too bent at impact (147.7° vs reference 165.8°)",
-      "injury_risk": "Bent elbow at full extension increases valgus stress on elbow joint, raising risk of UCL (ulnar collateral ligament) strain or tennis elbow.",
-      "correction": "Extend elbow fully at contact point while maintaining racket face stability",
-      "drill": "Elbow extension drill: Perform smash with racket held at 45°, focus on extending elbow fully without wrist bend"
+      "problem": "Excessively bent elbow at impact (15.9° vs. reference 165.8°)",
+      "injury_risk": "A hyper-flexed elbow at contact significantly increases stress on the elbow joint (ulnar nerve, ligaments) and can lead to issues like tennis elbow (lateral epicondylitis) or golfer's elbow (medial epicondylitis). It also compromises racket head speed and direction.",
+      "correction": "At the moment of impact, the elbow should be fully extended (straight) to maximize reach and power while minimizing joint stress. Practice extending the arm fully through the point of contact.",
+      "drill": "1. Static Elbow Extension Hold: With racket in smash position, hold the elbow fully extended for 5-10 seconds, gradually building up endurance. 2. Target Smash Practice: Aim for high, distant targets to naturally encourage full elbow extension and jump height."
     },
     {
-      "body_part": "body position",
-      "problem": "Contact point too low (-0.082 vs reference -0.153)",
-      "injury_risk": "Lower contact point forces excessive trunk lean and shoulder elevation, increasing torque on shoulder joint and neck muscles.",
-      "correction": "Time jump higher or initiate earlier for optimal head-high contact point",
-      "drill": "Vertical smash drill: Practice hitting smash at head level using a high serve feed"
+      "body_part": "upper body",
+      "problem": "Low contact point (-0.011 vs. reference -0.153) and insufficient arm extension (0.017 vs. reference 0.160)",
+      "injury_risk": "Smashing from too low a position and with limited arm extension forces the shoulder and elbow into awkward and potentially injurious positions. It can lead to shoulder impingement and overuse injuries due to the shortened range of motion and increased joint compression.",
+      "correction": "Jump higher to reach the optimal contact point (higher in the air), and ensure the arm is fully extended through the contact zone. This allows for a more natural and powerful swing with reduced joint strain.",
+      "drill": "1. High Jump Smash Practice: Use a target elevated slightly above net height to encourage jumping higher and full arm extension. 2. Shadow Smashes with Visualization: Practice shadow smashes while mentally focusing on extending the arm fully and contacting the ball at a higher point."
     }
   ],
-  "positive_feedback": "Good core engagement and racket speed observed. Your arm extension shows potential for power development if angles are corrected. Maintaining racket face stability is a positive technical foundation.",
-  "summary": "Significant form adjustments needed to prevent shoulder/elbow injuries and maximize power. Focus on neutral shoulder position and full elbow extension. With proper technique correction, you can develop powerful, safe smashes."
+  "positive_feedback": "Your foundation of initiating the smash with proper racket preparation and follow-through is solid, and your dedication to improving is evident. With focused work on the corrective tips, you'll be well on your way to developing a powerful and safe smash technique.",
+  "summary": "Your current smash form has a high injury risk, particularly for shoulder issues, due to excessive shoulder rotation, a bent elbow at contact, and a low contact point with limited arm extension. Prioritizing corrections to achieve full elbow extension, a higher and more appropriate contact point, and controlled shoulder mechanics will not only reduce injury risk but also enhance the power and effectiveness of your smash."
 }

@@ -41,6 +41,7 @@ Based on this analysis, provide:
    - Consider technique accuracy, injury risk, and power generation
    - Deduct points for form issues that increase injury risk
    - Award points for good mechanics
+   - Be sure to be giving in your points, we don't want to discourage the player!
 
 2. INJURY RISK ASSESSMENT:
    - Rate as: LOW, MODERATE, or HIGH
