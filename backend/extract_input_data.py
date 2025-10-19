@@ -227,11 +227,7 @@ def create_gif(csv_path='backend/user_keypoints_selected.csv'):
 
 if __name__ == "__main__":
     # OPTION 1: Use absolute path
-<<<<<<< HEAD
     video_path = r'C:\Users\kotha\Downloads\CCI-HACKATHON\backend\uploads\smash_video_example.mp4'
-=======
-    video_path = "backend/uploads/smash_video_example.mp4"
->>>>>>> c790f2a0bf04fcce2c802a0f9ec7dc9b2d54cffa
     
     # OPTION 2: Or use relative path from where you're running the script
     # video_path = '../smash_video_example.mp4'  # if video is one folder up
