@@ -257,7 +257,10 @@ if __name__ == "__main__":
         else:
             feedback.append("   💪 Keep practicing!")
         
+        with open('backend/output.txt', 'w', encoding='utf-8') as f:
+            f.write("\n".join(feedback))
         return "\n".join(feedback)
 
     feedback = generate_detailed_feedback(user_analysis, best_ref_analysis, user_impact, ref_impact)
     print(feedback)
+

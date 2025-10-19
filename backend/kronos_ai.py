@@ -178,38 +178,10 @@ def save_feedback_to_file(feedback: Dict[str, Any], filename: str = "feedback_re
 # Example usage and testing
 if __name__ == "__main__":
     # Example analysis output (you would get this from your form analysis)
-    analysis_text = """
-IMPACT POINT ANALYSIS
-============================================================
-User impact at frame: 129.0
-Reference impact at frame: 49.0
+    with open('output.txt', 'r', encoding='utf-8') as f:
+        content = f.read()
 
-============================================================
-BADMINTON SMASH FORM ANALYSIS
-============================================================
-
-📐 ELBOW ANGLE AT IMPACT:
-   Your angle: 159.1°
-   Reference: 174.9°
-   Difference: -15.8°
-   ⚠️  Your elbow is too bent. Extend more at contact for maximum reach
-       and racket head speed.
-
-💪 SHOULDER ANGLE AT IMPACT:
-   Your angle: 81.3°
-   Reference: 23.1°
-   Difference: +58.2°
-   ⚠️  Your shoulder is over-rotated. This may cause loss of control.
-
-🎯 CONTACT POINT HEIGHT:
-   Your height: -0.100
-   Reference: -0.149
-   Difference: -0.058
-   ⚠️  Reach higher! Full arm extension maximizes racket head speed.
-
-⭐ OVERALL FORM SCORE: 45/100
-   💪 Keep practicing! Focus on the key areas mentioned above.
-"""
+    analysis_text = content
     from dotenv import load_dotenv
     import os
 
