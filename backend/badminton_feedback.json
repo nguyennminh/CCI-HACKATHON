@@ -1,30 +1,30 @@
 {
-  "overall_score": 40,
-  "injury_risk": "HIGH",
-  "injury_risk_explanation": "Excessive shoulder over-rotation and excessive elbow flexion create significant risk of shoulder impingement, rotator cuff strains, and elbow tendinitis. Inadequate contact height reduces control and increases joint stress.",
+  "overall_score": 42,
+  "injury_risk": "MODERATE",
+  "injury_risk_explanation": "Excessive shoulder over-rotation and an overly bent elbow at impact are primary concerns, significantly increasing the risk of shoulder injuries like rotator cuff strains or impingements. Early contact due to lower contact point also contributes to joint stress.",
   "critical_issues": [
     {
-      "body_part": "Shoulder",
-      "problem": "Excessive over-rotation (81.3° vs reference 23.1°)",
-      "injury_risk": "Creates internal shoulder rotation, compressing the rotator cuff against the acromion, leading to impingement and potential rotator cuff tears.",
-      "correction": "Focus on maintaining external rotation at contact; imagine 'throwing a grenade' rather than 'throwing a punch'.",
-      "drill": "Wall Smash Drill: Practice smashes with racket hitting the wall while maintaining external shoulder rotation at contact point."
+      "body_part": "shoulder",
+      "problem": "Shoulder over-rotation (81.3° vs. 23.1°)",
+      "injury_risk": "Excessive internal rotation creates abnormal stress on the rotator cuff muscles and labrum, increasing risk of impingement, strains, and long-term shoulder instability.",
+      "correction": "Maintain a more closed, stable shoulder position during the smash, focusing on controlled extension rather than aggressive rotation.",
+      "drill": "Wall smash drill with focus on controlled shoulder extension and minimal rotation. Use a mirror for immediate feedback."
     },
     {
-      "body_part": "Elbow",
-      "problem": "Excessive flexion (159.1° vs reference 174.9°)",
-      "injury_risk": "Bent elbow at contact reduces racket head speed and places abnormal stress on elbow joint and tendons, increasing risk of lateral epicondylitis (tennis elbow).",
-      "correction": "Extend elbow fully at impact point; focus on brushing the shuttle downwards with straight arm.",
-      "drill": "Racket Extension Drill: Perform slow-motion smashes focusing on extending elbow fully while maintaining shoulder stability."
+      "body_part": "elbow",
+      "problem": "Overly bent elbow at impact (159.1° vs. 174.9°)",
+      "injury_risk": "A bent elbow during impact compromises racket head speed and creates undue stress on the elbow joint (medial epicondyle), increasing risk of tennis elbow type injuries.",
+      "correction": "Extend your arm fully through the smash, ensuring the elbow is straight but not locked at impact.",
+      "drill": "Slow-motion smash with elbow extension focus. Practice hitting a stationary shuttlecock with full arm extension while maintaining a stable elbow."
     },
     {
-      "body_part": "Contact Point",
-      "problem": "Inadequate height (-0.100 vs reference -0.149)",
-      "injury_risk": "Lower contact point reduces racket head speed and forces body to compensate with excessive shoulder/neck movement, increasing fatigue-related injury risk.",
-      "correction": "Full body extension to reach higher contact point; use lower body power to elevate racket.",
-      "drill": "High Contact Practice: Focus on extending fully through the shot, using leg drive to reach maximum height at contact."
+      "body_part": "entire arm",
+      "problem": "Too early impact point (-0.100 vs. -0.149)",
+      "injury_risk": "Striking the shuttle too early forces the arm to decelerate rapidly, creating abnormal stresses through the shoulder, elbow, and wrist joints.",
+      "correction": "Delay the smash slightly to allow your body to generate maximum acceleration and reach the optimal contact point with a fully extended arm.",
+      "drill": "Shuttlecock toss drill: Practice tossing a shuttlecock high and deep, then focusing on a delayed, full-extension smash with proper follow-through."
     }
   ],
-  "positive_feedback": "Your form shows good fundamentals with clear follow-through. You demonstrate proper sequencing of movements and maintain good racket head speed overall. With targeted adjustments, you can achieve clean, powerful smashes while minimizing injury risk.",
-  "summary": "Your smash technique requires significant improvement in shoulder positioning and elbow extension to reduce injury risk and maximize power. Focus on maintaining external shoulder rotation and full elbow extension at contact point. With consistent practice of proper mechanics, you can develop a powerful and injury-resistant smash technique."
+  "positive_feedback": "Your smash has good foundation mechanics with strong wrist and racket head speed. The emphasis on maintaining wrist extension and racket face angle through impact is commendable. With focus on the technical corrections, you're well-positioned to develop a powerful and injury-resistant smash technique.",
+  "summary": "The smash technique shows promise with good wrist action, but requires significant refinement in shoulder positioning, elbow extension, and impact timing. Addressing these issues will not only enhance power and accuracy but is crucial for long-term injury prevention, particularly in the shoulder and elbow."
 }

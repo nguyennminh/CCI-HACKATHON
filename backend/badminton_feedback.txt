@@ -2,38 +2,38 @@
 BADMINTON FORM FEEDBACK
 ============================================================
 
-⭐ Overall Score: 40/100
-🏥 Injury Risk: HIGH
+⭐ Overall Score: 42/100
+🏥 Injury Risk: MODERATE
 
 📋 Risk Explanation:
-   Excessive shoulder over-rotation and excessive elbow flexion create significant risk of shoulder impingement, rotator cuff strains, and elbow tendinitis. Inadequate contact height reduces control and increases joint stress.
+   Excessive shoulder over-rotation and an overly bent elbow at impact are primary concerns, significantly increasing the risk of shoulder injuries like rotator cuff strains or impingements. Early contact due to lower contact point also contributes to joint stress.
 
 📝 Summary:
-   Your smash technique requires significant improvement in shoulder positioning and elbow extension to reduce injury risk and maximize power. Focus on maintaining external shoulder rotation and full elbow extension at contact point. With consistent practice of proper mechanics, you can develop a powerful and injury-resistant smash technique.
+   The smash technique shows promise with good wrist action, but requires significant refinement in shoulder positioning, elbow extension, and impact timing. Addressing these issues will not only enhance power and accuracy but is crucial for long-term injury prevention, particularly in the shoulder and elbow.
 
 ✅ What You're Doing Well:
-   Your form shows good fundamentals with clear follow-through. You demonstrate proper sequencing of movements and maintain good racket head speed overall. With targeted adjustments, you can achieve clean, powerful smashes while minimizing injury risk.
+   Your smash has good foundation mechanics with strong wrist and racket head speed. The emphasis on maintaining wrist extension and racket face angle through impact is commendable. With focus on the technical corrections, you're well-positioned to develop a powerful and injury-resistant smash technique.
 
 ============================================================
 ⚠️  AREAS FOR IMPROVEMENT
 ============================================================
 
 1. SHOULDER
-   ❌ Problem: Excessive over-rotation (81.3° vs reference 23.1°)
-   🏥 Injury Risk: Creates internal shoulder rotation, compressing the rotator cuff against the acromion, leading to impingement and potential rotator cuff tears.
-   ✅ Correction: Focus on maintaining external rotation at contact; imagine 'throwing a grenade' rather than 'throwing a punch'.
-   💪 Drill: Wall Smash Drill: Practice smashes with racket hitting the wall while maintaining external shoulder rotation at contact point.
+   ❌ Problem: Shoulder over-rotation (81.3° vs. 23.1°)
+   🏥 Injury Risk: Excessive internal rotation creates abnormal stress on the rotator cuff muscles and labrum, increasing risk of impingement, strains, and long-term shoulder instability.
+   ✅ Correction: Maintain a more closed, stable shoulder position during the smash, focusing on controlled extension rather than aggressive rotation.
+   💪 Drill: Wall smash drill with focus on controlled shoulder extension and minimal rotation. Use a mirror for immediate feedback.
 
 2. ELBOW
-   ❌ Problem: Excessive flexion (159.1° vs reference 174.9°)
-   🏥 Injury Risk: Bent elbow at contact reduces racket head speed and places abnormal stress on elbow joint and tendons, increasing risk of lateral epicondylitis (tennis elbow).
-   ✅ Correction: Extend elbow fully at impact point; focus on brushing the shuttle downwards with straight arm.
-   💪 Drill: Racket Extension Drill: Perform slow-motion smashes focusing on extending elbow fully while maintaining shoulder stability.
+   ❌ Problem: Overly bent elbow at impact (159.1° vs. 174.9°)
+   🏥 Injury Risk: A bent elbow during impact compromises racket head speed and creates undue stress on the elbow joint (medial epicondyle), increasing risk of tennis elbow type injuries.
+   ✅ Correction: Extend your arm fully through the smash, ensuring the elbow is straight but not locked at impact.
+   💪 Drill: Slow-motion smash with elbow extension focus. Practice hitting a stationary shuttlecock with full arm extension while maintaining a stable elbow.
 
-3. CONTACT POINT
-   ❌ Problem: Inadequate height (-0.100 vs reference -0.149)
-   🏥 Injury Risk: Lower contact point reduces racket head speed and forces body to compensate with excessive shoulder/neck movement, increasing fatigue-related injury risk.
-   ✅ Correction: Full body extension to reach higher contact point; use lower body power to elevate racket.
-   💪 Drill: High Contact Practice: Focus on extending fully through the shot, using leg drive to reach maximum height at contact.
+3. ENTIRE ARM
+   ❌ Problem: Too early impact point (-0.100 vs. -0.149)
+   🏥 Injury Risk: Striking the shuttle too early forces the arm to decelerate rapidly, creating abnormal stresses through the shoulder, elbow, and wrist joints.
+   ✅ Correction: Delay the smash slightly to allow your body to generate maximum acceleration and reach the optimal contact point with a fully extended arm.
+   💪 Drill: Shuttlecock toss drill: Practice tossing a shuttlecock high and deep, then focusing on a delayed, full-extension smash with proper follow-through.
 
 ============================================================

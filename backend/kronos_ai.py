@@ -210,9 +210,14 @@ BADMINTON SMASH FORM ANALYSIS
 ⭐ OVERALL FORM SCORE: 45/100
    💪 Keep practicing! Focus on the key areas mentioned above.
 """
-    
-    # Your API key (consider using environment variable in production)
-    api_key = "kl_8de5d1021ab88d725db4426791bcd805cf189a467e0465488a0567c0647b64bb"
+    from dotenv import load_dotenv
+    import os
+
+    # Load environment variables from .env file
+    load_dotenv()
+
+    # Get the API_KEY
+    api_key = os.getenv("API_KEY")
     
     # Or use environment variable:
     # os.environ['KRONOS_API_KEY'] = "your_api_key"
