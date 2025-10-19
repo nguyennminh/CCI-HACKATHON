@@ -11,7 +11,7 @@ import seaborn as sns
 # LOAD DATA
 # ============================================================
 
-df = pd.read_csv('combined_normalized_data.csv')
+df = pd.read_csv('backend/combined_normalized_data.csv')
 
 print(f"Loaded {len(df)} frames")
 print(f"Unique IDs: {df['id'].unique()}")
@@ -123,9 +123,22 @@ def compare_motion_sequences(user_seq, reference_seq):
 if __name__ == "__main__":
     # Extract sequences
     user_seq = get_sequence(df, 'user_video')
-    ref_114_seq = get_sequence(df, 114)
-    ref_135_seq = get_sequence(df, 135)
-    ref_148_seq = get_sequence(df, 148)
+
+    # Read the CSV
+    df = pd.read_csv("backend/form_scores.csv")
+
+    # Get the first column name (if you don’t know it)
+    first_col = df.columns[0]
+
+    # Get rows 3, 4, 5 (remember: Python is 0-indexed, so these are index 2, 3, 4)
+    values = df.loc[2:4, first_col].values
+    print(values)
+
+    df = pd.read_csv('backend/combined_normalized_data.csv')
+
+    ref_114_seq = get_sequence(df, values[0])
+    ref_135_seq = get_sequence(df, values[1])
+    ref_148_seq = get_sequence(df, values[2])
 
     dist_114, path_114 = compare_motion_sequences(user_seq, ref_114_seq)
     dist_135, path_135 = compare_motion_sequences(user_seq, ref_135_seq)
@@ -133,20 +146,20 @@ if __name__ == "__main__":
 
     print("DTW DISTANCE ANALYSIS")
     print("=" * 60)
-    print(f"Distance to Shot 114: {dist_114:.4f}")
-    print(f"Distance to Shot 135: {dist_135:.4f}")
-    print(f"Distance to Shot 148: {dist_148:.4f}")
+    print(f"Distance to Shot {values[0]}: {dist_114:.4f}")
+    print(f"Distance to Shot {values[1]}: {dist_135:.4f}")
+    print(f"Distance to Shot {values[2]}: {dist_148:.4f}")
 
-    best_ref_id = min([(dist_114, 114), (dist_135, 135), (dist_148, 148)])[1]
+    best_ref_id = min([(dist_114, values[0]), (dist_135, values[1]), (dist_148, values[2])])[1]
     print(f"\nBest matching reference: Shot {best_ref_id}")
 
     # Key pose analysis
     user_analysis = analyze_key_poses(df, 'user_video')
-    ref_114_analysis = analyze_key_poses(df, 114)
-    ref_135_analysis = analyze_key_poses(df, 135)
-    ref_148_analysis = analyze_key_poses(df, 148)
+    ref_114_analysis = analyze_key_poses(df, values[0])
+    ref_135_analysis = analyze_key_poses(df, values[1])
+    ref_148_analysis = analyze_key_poses(df, values[2])
 
-    best_ref_analysis = {114: ref_114_analysis, 135: ref_135_analysis, 148: ref_148_analysis}[best_ref_id]
+    best_ref_analysis = {values[0]: ref_114_analysis, values[1]: ref_135_analysis, values[2]: ref_148_analysis}[best_ref_id]
 
     # Identify impact frames
     user_impact_idx = user_analysis['wrist_height'].idxmin()

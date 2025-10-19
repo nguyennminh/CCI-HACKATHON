@@ -9,7 +9,7 @@ from matplotlib.animation import FuncAnimation
 # Indices for right shoulder, left shoulder, etc.
 KEYPOINT_INDICES = [12, 11, 14, 13, 16, 15, 24, 23]
 
-def extract_keypoints(video_path='smash_video_example.mp4', output_csv='user_keypoints_selected.csv'):
+def extract_keypoints(video_path='uploads/smash_video_example.mp4', output_csv='user_keypoints_selected.csv'):
     print(f"Opening video: {video_path}")
     
     # Check if video file exists
@@ -199,17 +199,12 @@ def create_gif(csv_path='user_keypoints_selected.csv'):
             # Transform coordinates: rotate 90° counterclockwise
             keypoints[kpt] = (1 - row[f'kpt_{kpt}_y'], row[f'kpt_{kpt}_x'])
         
-        for idx, (a, b) in enumerate(skeleton):
-            if a in keypoints and b in keypoints:
-                pt_a = keypoints[a]
-                pt_b = keypoints[b]
-                if pt_a[0] != 0 and pt_a[1] != 0 and pt_b[0] != 0 and pt_b[1] != 0:
-                    lines[idx].set_data([pt_a[0], pt_b[0]], [pt_a[1], pt_b[1]])
-                else:
-                    lines[idx].set_data([], [])
+        for idx, (a,b) in enumerate(skeleton):
+            if keypoints[a][0] != 0 and keypoints[a][1] != 0 and keypoints[b][0] != 0 and keypoints[b][1] != 0:
+                lines[idx].set_data([keypoints[a][0], keypoints[b][0]],
+                                    [keypoints[a][1], keypoints[b][1]])
             else:
                 lines[idx].set_data([], [])
-        
         return lines
     
     anim = FuncAnimation(fig, update, frames=len(shot_df), interval=100, blit=False)
@@ -217,7 +212,7 @@ def create_gif(csv_path='user_keypoints_selected.csv'):
     
     try:
         print("Saving animation...")
-        anim.save(gif_filename, writer='pillow', fps=10)
+        anim.save(gif_filename, writer='pillow', fps=15)
         print(f"✅ Saved animation to {gif_filename}")
         plt.close()
         return gif_filename
@@ -231,7 +226,11 @@ def create_gif(csv_path='user_keypoints_selected.csv'):
 
 if __name__ == "__main__":
     # OPTION 1: Use absolute path
+<<<<<<< HEAD
     video_path = r'backend\uploads\smash_video_example.mov'
+=======
+    video_path = r'C:\Users\iyerk\OneDrive\Documents\Krish\Projects\CCI-HACKATHON\backend\uploads\smash_video_example.mp4'
+>>>>>>> 64289e5d7fa58b748657239b7d36061ac2439d50
     
     # OPTION 2: Or use relative path from where you're running the script
     # video_path = '../smash_video_example.mp4'  # if video is one folder up
