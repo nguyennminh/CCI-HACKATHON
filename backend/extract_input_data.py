@@ -141,7 +141,7 @@ def extract_keypoints(video_path='uploads/smash_video_example.mp4', output_csv='
     df_user.insert(0, 'id', 'user_video')
     df_user.insert(1, 'type_of_shot', 'smash')
     
-    df_user.to_csv(output_csv, index=False)
+    df_user.to_csv("backend/user_keypoints_selected.csv", index=False)
     print(f"\n✅ Saved keypoints to {output_csv} with {len(df_user)} frames")
     print(f"First few rows:")
     print(df_user.head())

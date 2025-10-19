@@ -127,7 +127,7 @@ def save_scores(score_df: pd.DataFrame, filename: str = "form_scores.csv"):
         score_df (pd.DataFrame): DataFrame containing shot IDs and scores.
         filename (str): Output CSV filename.
     """
-    score_df.to_csv(filename, index=False)
+    score_df.to_csv("backend/form_scores.csv", index=False)
     print(f"📁 Scores saved to {filename}")
     print(score_df.head())
 
