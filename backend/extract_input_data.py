@@ -208,7 +208,8 @@ def create_gif(csv_path='user_keypoints_selected.csv'):
         return lines
     
     anim = FuncAnimation(fig, update, frames=len(shot_df), interval=100, blit=False)
-    gif_filename = f'badminton_shot_{shot_id}.gif'
+    os.makedirs('static', exist_ok=True)
+    gif_filename = f'static/badminton_shot_{shot_id}.gif'
     
     try:
         print("Saving animation...")
@@ -226,11 +227,7 @@ def create_gif(csv_path='user_keypoints_selected.csv'):
 
 if __name__ == "__main__":
     # OPTION 1: Use absolute path
-<<<<<<< HEAD
-    video_path = r'backend\uploads\smash_video_example.mov'
-=======
-    video_path = r'C:\Users\iyerk\OneDrive\Documents\Krish\Projects\CCI-HACKATHON\backend\uploads\smash_video_example.mp4'
->>>>>>> 64289e5d7fa58b748657239b7d36061ac2439d50
+    video_path = r'C:\Users\kotha\Downloads\CCI-HACKATHON\backend\uploads\smash_video_example.mp4'
     
     # OPTION 2: Or use relative path from where you're running the script
     # video_path = '../smash_video_example.mp4'  # if video is one folder up
